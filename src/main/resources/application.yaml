@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: jdbc:mysql://8.138.114.27:3306/mayer-cms?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
+    username: mayer-cms
+    password: hF6JHMamwFbdNmM8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  type-aliases-package: org.common.entity
+  mapper-locations: classpath:mapper/*.xml
+
