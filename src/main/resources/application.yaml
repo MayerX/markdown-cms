@@ -1,12 +1,25 @@
 spring:
-  datasource:
-    url: jdbc:mysql://8.138.114.27:3306/mayer-cms?useSSL=false&serverTimezone=UTC&characterEncoding=utf8
-    username: mayer-cms
-    password: hF6JHMamwFbdNmM8
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: dev
+  application:
+    name: Markdown-CMS
+  main:
+    banner-mode: console
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  liquibase:
 
 
-mybatis:
-  type-aliases-package: org.common.entity
-  mapper-locations: classpath:mapper/*.xml
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    banner: off
+  type-aliases-package: org.common.entity # 扫描的类型别名包
+  mapper-locations: classpath:mapper/*.xml # 映射文件的位置
 
+server:
+  servlet:
+    context-path: /api # 根路径前缀
+  shutdown: graceful
