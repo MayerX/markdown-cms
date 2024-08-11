@@ -1,8 +1,10 @@
 package org.api.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import org.common.entity.BaseEntity;
 
 /**
@@ -12,11 +14,15 @@ import org.common.entity.BaseEntity;
  */
 @Data
 @Builder
-@TableName("user")
+@AllArgsConstructor
+@TableName("base_user")
+@EqualsAndHashCode(callSuper = true)
 public class User extends BaseEntity {
 
     private String username;
 
     private String password;
+
+    private String email;
 
 }
