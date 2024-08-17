@@ -17,7 +17,7 @@ mybatis-plus:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     banner: off
-  type-aliases-package: org.common.entity # 扫描的类型别名包
+  type-aliases-package: "org.common.entity,org.api.entity" # 扫描的类型别名包
   mapper-locations: classpath:mapper/*.xml # 映射文件的位置
 
 server:

@@ -15,17 +15,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <springboot.version>3.3.1</springboot.version>
         <lombok.version>1.18.24</lombok.version>
-        <mybatisplus.version>3.5.3.1</mybatisplus.version>
+        <mybatisplus.version>3.5.7</mybatisplus.version>
         <mysql.version>8.3.0</mysql.version>
         <validation.version>3.1.5</validation.version>
         <swagger.version>2.3.0</swagger.version>
         <hutool.version>5.8.25</hutool.version>
         <liquibase.version>4.24.0</liquibase.version>
+        <mybaitsplustest.version>3.5.7</mybaitsplustest.version>
     </properties>
 
     <modules>
         <module>cms-api</module>
-        <module>cms-service</module>
+        <module>cms-application</module>
         <module>cms-common</module>
     </modules>
 
@@ -50,7 +51,7 @@
             <!--Mybatis Plus-->
             <dependency>
                 <groupId>com.baomidou</groupId>
-                <artifactId>mybatis-plus-boot-starter</artifactId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
                 <version>${mybatisplus.version}</version>
             </dependency>
 
@@ -88,6 +89,13 @@
                 <artifactId>liquibase-core</artifactId>
                 <version>${liquibase.version}</version>
             </dependency>
+
+            <!--MybatisPlus Test-->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-boot-starter-test</artifactId>
+                <version>${mybaitsplustest.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -104,7 +112,7 @@
 
         <dependency>
             <groupId>com.baomidou</groupId>
-            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
         </dependency>
 
         <dependency>
