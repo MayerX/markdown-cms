@@ -2,6 +2,7 @@ package org.common.entity;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableLogic;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
@@ -11,6 +12,7 @@ import lombok.Setter;
 import org.common.utils.DateUtil;
 import org.springframework.format.annotation.DateTimeFormat;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Getter
@@ -25,12 +27,12 @@ public class BaseEntity {
     @JsonFormat(pattern = DateUtil.PATTERN_DATETIME)
     @DateTimeFormat(pattern = DateUtil.PATTERN_DATETIME)
     @Schema(defaultValue = "创建时间")
-    private Date createTime;
+    private LocalDateTime createTime;
 
     @JsonFormat(pattern = DateUtil.PATTERN_DATETIME)
     @DateTimeFormat(pattern = DateUtil.PATTERN_DATETIME)
     @Schema(defaultValue = "更新时间")
-    private Date updateTime;
+    private LocalDateTime updateTime;
 
     @JsonSerialize(using = ToStringSerializer.class)
     @Schema(defaultValue = "创建人ID")
@@ -39,5 +41,8 @@ public class BaseEntity {
     @JsonSerialize(using = ToStringSerializer.class)
     @Schema(defaultValue = "更新人ID")
     private Long updateUser;
+
+    @TableLogic
+    private Integer is_deleted;
 
 }

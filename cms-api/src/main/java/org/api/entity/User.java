@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.common.entity.BaseEntity;
 
+import java.io.Serializable;
+
 /**
  * @author mayerjohnson
  * @Description
@@ -17,7 +19,7 @@ import org.common.entity.BaseEntity;
 @AllArgsConstructor
 @TableName("base_user")
 @EqualsAndHashCode(callSuper = true)
-public class User extends BaseEntity {
+public class User extends BaseEntity implements Serializable {
 
     private String username;
 

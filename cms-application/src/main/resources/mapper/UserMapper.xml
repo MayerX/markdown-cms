@@ -2,4 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.application.mapper.UserMapper">
 
+    <select id="selectUserPage" resultType="org.api.entity.User">
+        SELECT * FROM base_user WHERE is_deleted = 0;
+    </select>
 </mapper>
