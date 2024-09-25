@@ -4,6 +4,3 @@ spring:
     username: mayer-cms
     password: hF6JHMamwFbdNmM8
     driver-class-name: com.mysql.cj.jdbc.Driver
-  mvc:
-    servlet:
-      path: /api/v1

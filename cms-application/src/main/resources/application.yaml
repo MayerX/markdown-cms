@@ -25,5 +25,5 @@ mybatis-plus:
 
 server:
   servlet:
-    context-path: /api # 根路径前缀
+    context-path: /api/v1 # 根路径前缀
   shutdown: graceful
