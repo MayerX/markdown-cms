@@ -15,4 +15,11 @@ public interface IUserService extends IService<User> {
      * @return
      */
     IPage<User> selectUserPage(Page<User> page, UserDTO dto);
+
+    /**
+     * 注册用户
+     * @param userDTO
+     * @return
+     */
+    String register(UserDTO userDTO);
 }

@@ -7,13 +7,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.common.entity.BaseEntity;
 
+import java.io.Serial;
 import java.io.Serializable;
 
-/**
- * @author mayerjohnson
- * @Description
- * @created 2024-06-22 20:03
- */
 @Data
 @Builder
 @AllArgsConstructor
@@ -21,10 +17,15 @@ import java.io.Serializable;
 @EqualsAndHashCode(callSuper = true)
 public class User extends BaseEntity implements Serializable {
 
+    @Serial
+    private static final long serialVersionUID = 1L;
+
     private String username;
 
     private String password;
 
     private String email;
+
+    private Boolean isEnable;
 
 }

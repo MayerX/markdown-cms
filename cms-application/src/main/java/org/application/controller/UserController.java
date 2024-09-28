@@ -8,9 +8,7 @@ import org.api.dto.UserDTO;
 import org.api.entity.User;
 import org.application.service.IUserService;
 import org.common.entity.ResultEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -31,6 +29,11 @@ public class UserController {
     public ResultEntity<IPage<User>> page(Page<User> page, UserDTO dto) {
         IPage<User> ressult = userService.selectUserPage(page, dto);
         return ResultEntity.success(ressult);
+    }
+
+    @PostMapping("/register")
+    public ResultEntity<String> register(@RequestBody UserDTO userDTO) {
+        return ResultEntity.success(userService.register(userDTO));
     }
 
 }
