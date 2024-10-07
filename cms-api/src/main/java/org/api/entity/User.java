@@ -1,10 +1,7 @@
 package org.api.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 import org.common.entity.BaseEntity;
 
 import java.io.Serial;
@@ -12,6 +9,7 @@ import java.io.Serializable;
 
 @Data
 @Builder
+@NoArgsConstructor
 @AllArgsConstructor
 @TableName("base_user")
 @EqualsAndHashCode(callSuper = true)

@@ -4,3 +4,6 @@ spring:
     username: mayer-cms
     password: hF6JHMamwFbdNmM8
     driver-class-name: com.mysql.cj.jdbc.Driver
+  messages:
+    basename: i18n/messages
+    encoding: utf-8

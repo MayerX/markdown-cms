@@ -11,9 +11,15 @@ import org.springframework.http.HttpStatus;
 @Getter
 public enum RespCodeEnums {
 
+    // 200
     SUCCESS(HttpStatus.OK.value(), "Success"),
+    // 404
+    NOT_FOUND(HttpStatus.NOT_FOUND.value(), "Internal Not Found"),
+    // 500
     FAIL(HttpStatus.INTERNAL_SERVER_ERROR.value(), "Internal Server Error"),
-    NOT_FOUND(HttpStatus.NOT_FOUND.value(), "Internal Not Found");
+    // 502
+    BUSINESS_EXCEPTION(502, "Business Exception");
+
 
     private final int code;
 
